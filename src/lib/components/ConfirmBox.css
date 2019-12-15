@@ -1,0 +1,118 @@
+.confirm-box-container {
+  display: none;
+}
+
+.confirm-box-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #00000061;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box {
+  position: relative;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-radius: .25em .25em .4em .4em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  animation: fadein .5s;
+}
+
+/* header */
+.confirm-box-header {
+  display: flex;
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box-header img {
+  margin-right: 20px;
+}
+
+.confirm-box-header p {
+  margin: 0;
+  font-size: 18px !important;
+  color: #3e3e3e;
+}
+
+/* buttons */
+.confirm-btn {
+  width: 100%;
+  display: flex;
+}
+
+.confirm-box .confirm-btn button {
+  width: 100% !important;
+  background-color: #aaa;
+  color: #fff;
+  border: 0;
+  padding: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 0 0 5px 0;
+  cursor: pointer;
+  transition: background-color .2s;
+  outline: none !important;
+}
+
+.confirm-box button:hover {
+  background-color: #626b7d;
+}
+
+.confirm-box button:nth-child(1) {
+  background-color: #ff6a62;
+  border-radius: 0;
+  border-radius: 0 0 0 5px;
+}
+
+.confirm-box button:nth-child(1):hover {
+  background-color: #f44336;
+}
+
+/* close button */
+.confirm-box span {
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  cursor: pointer;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .confirm-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .confirm-box .confirm-btn button {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .confirm-box button:nth-child(1) {
+    border-radius: 0;
+  }
+
+  .confirm-box-header img {
+    display: none;
+  }
+}
