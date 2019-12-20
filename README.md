@@ -1,5 +1,5 @@
 ## 📋 ConfirmBox   
-A lightweight React component confirm alert dialog (responsive).  
+A Nice & lightweight React component confirm alert dialog with nice animation (responsive).  
 
 [Demo](https://react-dialog-confirm.onrender.com)
 
@@ -15,11 +15,12 @@ import ConfirmBox from "react-dialog-confirm";
 import '../node_modules/react-dialog-confirm/build/index.css'; // required
 
 <ConfirmBox // all props are required
-  icon="https://img.icons8.com/clouds/100/000000/vector.png"
-  label={{
-    text: 'Are you sure you want to delete this element?',
-    confirm: 'yes',
-    cancel: 'no'
+  options={{
+    icon:"https://img.icons8.com/clouds/100/000000/vector.png",
+    text: 'Are you sure you want to delete this element?', // alert text
+    confirm: 'yes', // button text for cancel btn
+    cancel: 'no', // button text for cancel btn
+    btn: true // with or without buttons
   }}
   isOpen={isOpen}
   onClose={handleClose}
@@ -28,7 +29,7 @@ import '../node_modules/react-dialog-confirm/build/index.css'; // required
 />
 ```
 
-### Examples:
+### Example 1:
 ```js
 const App = () => {
 
@@ -43,21 +44,44 @@ const App = () => {
     <>
       <button onClick={handleClose}>open confirm box</button>
       
-      <ConfirmBox // all props are required
-        icon="https://img.icons8.com/clouds/100/000000/vector.png"
-        label={{
+      <ConfirmBox // Note : in this example all props are required
+        options={{
+          icon:"https://img.icons8.com/clouds/100/000000/vector.png",
           text: 'Are you sure you want to delete this element?',
           confirm: 'yes',
-          cancel: 'no'
+          cancel: 'no',
+          btn: true
         }}
-        isOpen={isOpen} // to close or open dialog (true | false)
-        onClose={handleClose} // to close or open dialog
-        onConfirm={handleConfirm} // return yes : if button yes clicked
-        onCancel={handleCancel} // return no : button no clicked
+        isOpen={isOpen}
+        onClose={handleClose}
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
       />
     </>
   );
 }
+```
+
+### Example 2:  
+you can pass any elment as children
+```js
+<button onClick={handleClose}>open confirm box</button>
+
+<ConfirmBox
+  options={{ btn: false }}
+  isOpen={isOpen}
+  onClose={handleClose}
+  onConfirm={handleConfirm}
+  onCancel={handleCancel}
+>
+
+<form>
+  <input type="text" />
+  <input type="text" />
+  <button>click</button>
+</form>
+
+</ConfirmBox>        
 ```
 
 ### License

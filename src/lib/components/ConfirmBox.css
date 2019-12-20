@@ -21,7 +21,6 @@
   border-radius: 5px;
   border-radius: .25em .25em .4em .4em;
   box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-  animation: fadein .5s;
 }
 
 /* header */
@@ -62,9 +61,7 @@
   outline: none !important;
 }
 
-.confirm-box button:hover {
-  background-color: #626b7d;
-}
+.confirm-box button:hover {background-color: #626b7d;}
 
 .confirm-box button:nth-child(1) {
   background-color: #ff6a62;
@@ -72,9 +69,7 @@
   border-radius: 0 0 0 5px;
 }
 
-.confirm-box button:nth-child(1):hover {
-  background-color: #f44336;
-}
+.confirm-box button:nth-child(1):hover { background-color: #f44336; }
 
 /* close button */
 .confirm-box span {
@@ -85,18 +80,30 @@
   cursor: pointer;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* animation */
+.flipInX {
+  -webkit-backface-visibility: visible !important;  
+  backface-visibility: visible !important;
+  animation: flipInX 2s;
+  -webkit-animation: flipInX 2s;
 }
 
+
+@-webkit-keyframes flipInX {
+  0% { -webkit-transform: perspective(400px) rotateX(90deg); opacity: 0; }
+  40% { -webkit-transform: perspective(400px) rotateX(-10deg); opacity:1; }
+  70% { -webkit-transform: perspective(400px) rotateX(10deg); }
+  100% { -webkit-transform: perspective(400px) rotateX(0deg); }
+}
+
+@keyframes flipInX {
+  0% { transform: perspective(400px) rotateX(90deg);  opacity: 0; }
+  40% { transform: perspective(400px) rotateX(-10deg); opacity: 1; }
+  70% { transform: perspective(400px) rotateX(10deg); }
+  100% { transform: perspective(400px) rotateX(0deg); }
+}
+
+/* media query */
 @media screen and (max-width: 378px) {
   .confirm-btn {
     width: 100%;
@@ -104,15 +111,7 @@
     flex-direction: column;
   }
 
-  .confirm-box .confirm-btn button {
-    border-radius: 0 0 5px 5px;
-  }
-
-  .confirm-box button:nth-child(1) {
-    border-radius: 0;
-  }
-
-  .confirm-box-header img {
-    display: none;
-  }
+  .confirm-box .confirm-btn button { border-radius: 0 0 5px 5px; }
+  .confirm-box button:nth-child(1) { border-radius: 0; }
+  .confirm-box-header img { display: none; }
 }

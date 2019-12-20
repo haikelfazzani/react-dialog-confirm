@@ -1,6 +1,6 @@
 {
   "name": "react-dialog-confirm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight React component confirm dialog.",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
@@ -22,7 +22,7 @@
     "react-scripts": "3.3.0"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": ">=16.8.6"
   },
   "repository": {
     "type": "git",
