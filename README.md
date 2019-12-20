@@ -1,7 +1,8 @@
 ## 📋 ConfirmBox   
 A Nice & lightweight React component confirm alert dialog with nice animation (responsive).  
 
-[Demo](https://react-dialog-confirm.onrender.com)
+### [Demo](https://react-dialog-confirm.onrender.com)
+### [stackblitz Demo](https://stackblitz.com/edit/react-dialog-confirm?file=index.js)
 
 ![bundlephobia badge](https://badgen.net/npm/v/react-dialog-confirm) ![bundlephobia badge](https://badgen.net/bundlephobia/min/react-dialog-confirm) ![bundlephobia badge](https://badgen.net/bundlephobia/minzip/react-dialog-confirm)
 
